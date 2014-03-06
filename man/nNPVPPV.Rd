@@ -3,7 +3,7 @@
 \alias{nNPV}
 \alias{nPPV}
 \alias{AOppvnpv}
-\title{Asymptotic experimental design for inference on negative and positive predictive values.}
+\title{Asymptotic experimental design for inference on negative and positive predictive values in case-control studies.}
 
 \description{For internal use. Functions to compute sample size (to reach a pre-specified power) and optimal allocation of true positives and true negatives in case-control designs for binary diagnostic tests (Mercaldo et al. 2007).}
 

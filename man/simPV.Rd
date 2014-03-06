@@ -2,7 +2,7 @@
 \alias{simPV}
 
 \title{
-Simulate performance of confidence intervals for predictive values
+Simulate performance of confidence intervals for predictive values in a case-control design
 }
 \description{
 The function draws data under the binomial assumption and computes the asymptotic confidence bounds (lower bounds only!) for the positive and negative predictive values.

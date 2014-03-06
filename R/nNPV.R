@@ -19,7 +19,24 @@ if(TRUEnpv<=NPV0){n<-rep(NA)}else{
   n<-ceiling(nest)
  }
 
+
+if(!any(is.na(n))){
+n1se <- pmin(n*propP*se, n*propP*(1-se))
+n0sp <- pmin(n*(1-propP)*sp, n*(1-propP)*(1-sp))
+
+if(any(n1se<5)){
+wn1 <- which(n1se<5)
+if(length(wn1) <=4 ){wn1show <- paste(n[wn1], collapse=", ")}else{wn1show <- paste(n[wn1[1]],", ", n[wn1[2]],", ..., ", n[wn1[length(wn1)]], sep="")}
+warning(paste("Some sample sizes n (", wn1show, ") might be too small to expect validity of asymptotic formulas for anticipated sensitivity (se), and the corresponding proportion of positives (propP).", sep=""))
+}
+
+if(any(n0sp<5)){
+wn0 <- which(n0sp<5)
+if(length(wn0) <=4 ){wn0show <- paste(n[wn0], collapse=", ")}else{wn0show <- paste(n[wn0[1]],", ", n[wn0[2]], ", ..., ", n[wn0[length(wn0)]], sep="")}
+warning(paste("Some sample sizes n (", wn0show, ") might be too small to expect validity of asymptotic formulas for anticipated specificity (sp), and the corresponding proportion of negatives (1-propP).", sep=""))
+}
+}
+
 out<-list(n=n, se=se, sp=sp, prev=prev, NPV0=NPV0, TRUENPV=TRUEnpv, propP=propP, power=power, conf.level=conf.level)
 return(out)
 }
-

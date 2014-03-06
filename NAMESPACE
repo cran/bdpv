@@ -1,5 +1,11 @@
-# Default NAMESPACE created by R
-# Remove the previous line if you edit this file
 
-# Export all names
-exportPattern(".")
+export(
+BDtest, CIlnpv, CIlppv, CIlnpvak, CIlppvak, CombCInpv, CombCIppv, CIpvBI, CIpvBII,
+nNPV, nPPV, AOppvnpv, nPV,
+simPV, simPVmat,
+plotnPV, plotnPV2
+)
+
+S3method(print, BDtest)
+S3method(print, nPV)
+S3method(as.data.frame, nPV)

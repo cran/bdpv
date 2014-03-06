@@ -5,7 +5,7 @@
 \title{Confidence intervals and experimental design for negative and positive predictive values in binary diagnostic tests.}
 
 \description{
-Computing asymptotic confidence intervals for negative and positive predictive values in binary diagnostic test situations.
+Computing asymptotic confidence intervals for negative and positive predictive values of binary diagnostic test assuming a case-control design.
 Experimental design based on asymptotic formulas and Monte Carlo simulation for hypothesis tests on predictive values, including some plot functions to explore various experimental designs.
 }
 
@@ -13,18 +13,23 @@ Experimental design based on asymptotic formulas and Monte Carlo simulation for 
 \tabular{ll}{
 Package: \tab bdpv\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2011-08-17\cr
+Version: \tab 1.1\cr
+Date: \tab 2014-03-06\cr
 License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 }
 
-1) The function \code{\link{BDtest}} computes the asymptotic confidence intervals for negative and positive predictive value given in Mercaldo et al. (2007), assuming binomial sampling (leading to a 2x2 table) and known prevalence.
+1) Computing confidence intervals: The function \code{\link{BDtest}} computes the asymptotic confidence intervals for negative and positive predictive value given in Mercaldo et al. (2007),
+ assuming binomial sampling for obtaining estimates of sensitivity and specificity (leading to a 2x2 table with numbers of diseased and healthy fixed by design) and known prevalence.
+ Alternatively, the functions \code{\link{CIpvBI}} and \code{\link{CIpvBII}} allow to simulate Bayesian intervals for negative and positive predictive values in case-control designs (Stamey and Holt, 2010),
+ where prior knowledge concerning sensitivity, specificity may be included and external data and/or prior knowledge on prevalence may be included. By default, flat, non-informative priors are used,
+ resulting in intervals with improved frequentist small sample performance (Stamey and Holt, 2010).
 
-2) The function \code{\link{nPV}} uses the asymptotic formulas of Steinberg et al.(2009) to calculate the sample size necessary to reject tests witzh H0: PPV>=PPV0, H0NPV>=PNPV0, with a prespecified power. Further necessary input arguments are sensitivity, specificity, prevalence, NPV0, PPV0, the range and number of steps of proportion of truely positives in the trial.
-The results of this function can be plotted using \code{\link{plotnPV}}, \code{\link{plotnPV2}} and be somewhat edited by \code{\link{as.data.frame.nPV}}. 
+2) The function \code{\link{nPV}} uses the asymptotic formulas of Steinberg et al.(2009) to calculate the sample size necessary to reject tests witzh H0: PPV>=PPV0, H0NPV>=PNPV0, with a prespecified power in a case-control setting.
+ Further necessary input arguments are sensitivity, specificity, prevalence, NPV0, PPV0, the range and number of steps of proportion of true positives in the trial.
+ The results of this function can be plotted using \code{\link{plotnPV}}, \code{\link{plotnPV2}} and be somewhat edited by \code{\link{as.data.frame.nPV}}. 
 
-3) Since the results of these functions may be misleading in small sample or extreme proportion situations, the simulation functions \code{\link{simPV}} and \code{\link{simPVmat}} allow to check power and coverage probability for given parameter stettings.  
+3) Because the results of these functions may be misleading in small sample or extreme proportion situations, the simulation functions \code{\link{simPV}} and \code{\link{simPVmat}} allow to check power and coverage probability for given parameter stettings.  
 
 The remaining functions are meant for internal use.
 
@@ -36,6 +41,9 @@ Maintainer: Frank Schaarschmidt <schaarschmidt@biostat.uni-hannover.de>
 \references{
 \emph{Steinberg DM, Fine J, Chappell R (2009).} Sample size for positive and negative predictive value in diagnostic research using case-control designs. Biostatistics 10,1, 94-105.
 
+\emph{Mercaldo ND, Lau KF, Zhou XH (2007).} Confidence intervals for predictive values with an emphasis to case-control studies. Statistics in Medicine 26:2170-2183.
+
+\emph{Stamey JD and Holt MM (2010).} Bayesian interval estimation for predictive values for case-control studies. Communictaions in Statistics - Simulation and Computation. 39:1, 101-110.
 }
 
 \keyword{ package }

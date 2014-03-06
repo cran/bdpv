@@ -2,11 +2,13 @@
 \alias{BDtest}
 
 \title{
-Computing confidence intervals for sensitivity, specificity and predictive values.
+Computing confidence intervals for sensitivity, specificity and predictive values assuming a case-control study.
 }
 \description{
-This function computes confidence intervals for sensitivity, specificity as well as negative and positive predictive values.
-All methods assume that data are obtianed by binomila sampling. The methods to compute negative and positive predictive values (NPV, PPV) assume that prevalence is a known quantity, based on external knowledge.
+This function computes confidence intervals for negative and positive predictive values. Confidence intervals for sensitivity, specificity are computed for completeness.
+ All methods assume that data are obtained by binomial sampling, with the number of true positives and true negatives in the study fixed by design.
+ The methods to compute negative and positive predictive values (NPV, PPV) assume that prevalence is a known quantity, based on external knowledge.
+
 }
 \usage{
 BDtest(xmat, pr, conf.level = 0.95)

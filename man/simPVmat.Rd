@@ -1,6 +1,6 @@
 \name{simPVmat}
 \alias{simPVmat}
-\title{Simulate performance of confidence intervals for predictive values}
+\title{Simulate performance of confidence intervals for predictive values in case-control design}
 
 \description{Simulate the power (probability to exclude NPV0/PPV0), the coverage probability, and 0.1, 0.2, and 0.5-quantiles of the distribution of (lower!) asymptotic confidence bounds for predictive values. Different experimental setups may be compared. The function draws data under the binomial assumption and computes the asymptotic confidence bounds (lower bounds only!) for the positive and negative predictive values.}
 

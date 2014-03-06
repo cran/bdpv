@@ -24,7 +24,7 @@ Required sample sizes for different experimental settings and prevalences, neede
 \value{A plot.}
 
 \references{
-\emph{Steinberg DM, Fine J, Chappell R (2009).} Sample size for positive and negaitive predictiove value in diagnostic research using case-control designs. Biostatoistics 10, 1, 94-105.
+\emph{Steinberg DM, Fine J, Chappell R (2009).} Sample size for positive and negative predictive value in diagnostic research using case-control designs. Biostatistics 10, 1, 94-105.
 }
 \author{
 Frank Schaarschmidt

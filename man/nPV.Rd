@@ -2,10 +2,10 @@
 \alias{nPV}
 
 \title{
-Asymptotic sample size for inference on negative and positive predictive values.
+Asymptotic sample size calculation for inference on negative and positive predictive values in case-control designs.
 }
 \description{
-Functions to compute sample size (to reach a pre-specified power) and optimal allocation of true positives and true negatives in case-control designs for binary diagnostic tests (Mercaldo et al. 2007).
+Functions to compute sample size (to reach a pre-specified power) and optimal allocation of true positives and true negatives in case-control designs (Steinberg et al., 2008) for binary diagnostic tests (Mercaldo et al. 2007).
 }
 
 \usage{
@@ -37,6 +37,10 @@ The arguments \code{se}, \code{sp}, \code{prev}, \code{NPV0}, \code{PPV0}, \code
  On each resulting parameter set, the asymptotic sample size formulas of Steinberg et al.(2009) are applied.
 
 The result of those calculations may be plot using \code{\link{plotnPV}} and \code{\link{plotnPV2}}.
+
+Warnings are returned by the internal function nNPV and nPPV if the validity of asymptotic formulas under binomial sampling may be doubtable, namely when the asymptotic formulas return a total sample size n for given propP, se, sp, such that
+min(n*propP*se, n*propP*(1-se))<5 or min(n*(1-propP)*sp, n*(1-propP)*(1-sp))<5. That is, a warning is returned if the proposed design of the case-control study (n1, n0) = (n*propP, n*(1-propP)) leads to expected counts < 5 for any cell of the 2x2 table.
+
 }
 
 \value{
@@ -63,7 +67,7 @@ Frank Schaarschmidt
 }
 \examples{
 
-#Reproducing illustration from Section 3.4 and 4.2 in
+#Reproducing illustration in Section 3.4 and 4.2 of
 #Steinberg et al. (2009)
 
 FIG1<-nPV(se=0.8, sp=0.95, prev=1/16, NPV0=0.98, PPV0=0.4,
