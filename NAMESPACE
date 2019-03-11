@@ -6,6 +6,9 @@ simPV, simPVmat,
 plotnPV, plotnPV2
 )
 
+importFrom("graphics", "layout", "lines", "par", "plot")
+importFrom("stats", "binom.test", "median", "na.omit", "qnorm", "quantile", "rbeta", "rbinom")
+
 S3method(print, BDtest)
 S3method(print, nPV)
 S3method(as.data.frame, nPV)

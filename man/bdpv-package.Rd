@@ -13,8 +13,8 @@ Experimental design based on asymptotic formulas and Monte Carlo simulation for 
 \tabular{ll}{
 Package: \tab bdpv\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2014-03-06\cr
+Version: \tab 1.3\cr
+Date: \tab 2018-04-17\cr
 License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 }
@@ -43,7 +43,7 @@ Maintainer: Frank Schaarschmidt <schaarschmidt@biostat.uni-hannover.de>
 
 \emph{Mercaldo ND, Lau KF, Zhou XH (2007).} Confidence intervals for predictive values with an emphasis to case-control studies. Statistics in Medicine 26:2170-2183.
 
-\emph{Stamey JD and Holt MM (2010).} Bayesian interval estimation for predictive values for case-control studies. Communictaions in Statistics - Simulation and Computation. 39:1, 101-110.
+\emph{Stamey JD and Holt MM (2010).} Bayesian interval estimation for predictive values for case-control studies. Communications in Statistics - Simulation and Computation. 39:1, 101-110.
 }
 
 \keyword{ package }
